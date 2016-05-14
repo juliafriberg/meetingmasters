@@ -4,7 +4,7 @@
 
 var CLIENT_ID = '774472576212-duo5git07541f8rmbmb1t2r0ugldpga6.apps.googleusercontent.com';
 
-var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
+var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly", "https://www.googleapis.com/auth/userinfo.profile"];
 
 var token;
 

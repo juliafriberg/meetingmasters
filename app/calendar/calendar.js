@@ -3,22 +3,26 @@
  */
 function loadCalendarApi(){
     gapi.client.load('calendar', 'v3');
+    gapi.client.load('plus','v1');
+    var request = gapi.client.plus.people.get({
+        'userId': 'me'
+    });
 }
 
-function emptySchedule(startTime, stopTime, weeks){
+function emptySchedule(startTime, stopTime){
 
 }
 
 function upcomingEvents(weeks){
     var calendars = gapi.client.calendar.calendarList.list();
     var calendarList = calendars.items;
-    
+
     var request = gapi.client.calendar.events.list({
         'calendarId': 'primary',
         'timeMin': (new Date()).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
-        'maxResults': 14,
+        'maxResults': 1000,
         'orderBy': 'startTime'
     });
     window.alert(toString(request));
@@ -49,6 +53,7 @@ function appendPre(message) {
     pre.appendChild(textContent);
 }
 
-function getTimeSlots(){
+function getTimeSlots(startTime, endTime, duration, days){
+    slots = emptySchedule(startTime, endTime, days)
     events = upcomingEvents();
 }
