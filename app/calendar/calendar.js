@@ -2,6 +2,7 @@
  * Created by joakim on 2016-05-14.
  */
 function loadCalendarApi(){
+    window.alert("Api loaded");
     gapi.client.load('calendar', 'v3');
 }
 
@@ -10,8 +11,6 @@ function emptySchedule(startTime, stopTime, weeks){
 }
 
 function upcomingEvents(weeks){
-
-
     var request = gapi.client.calendar.events.list({
         'calendarId': 'primary',
         'timeMin': (new Date()).toISOString(),
@@ -20,6 +19,7 @@ function upcomingEvents(weeks){
         'maxResults': 14,
         'orderBy': 'startTime'
     });
+    window.alert(toString(request));
 
     request.execute(function(resp){
         var events = resp.items;
@@ -43,9 +43,10 @@ function upcomingEvents(weeks){
 function appendPre(message) {
     var pre = document.getElementById('output');
     var textContent = document.createTextNode(message + '\n');
+    window.alert(textContent);
     pre.appendChild(textContent);
 }
 
-function getTimeSlots(startTime, stopTime, weekends, weeks){
-    timeSlots = genEmptyCalendar()
+function getTimeSlots(){
+    events = upcomingEvents();
 }

@@ -97,7 +97,7 @@
                                 <strong>Teams</strong>
                             </h4>
                             <p>Your teams</p>
-                            <a href="#" class="btn btn-light" onclick = printToken()>Learn More</a>
+                            <a href="#" class="btn btn-light" onclick = getTimeSlots()>Learn More</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -258,6 +258,8 @@
 
         var name = document.getElementById("name");
         name.innerHTML = "Julia";
+
+        loadCalendarApi();
         return true;
     }
 </script>
