@@ -181,7 +181,15 @@ hr.small {
 }
 
 .service-item {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.padding-left {
+    padding-left: 200px;
 }
 
 /* Callout */
