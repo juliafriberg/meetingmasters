@@ -60,14 +60,9 @@
 
 <!-- Services -->
 <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id="services" class="services bg-primary">
+<section id="search" class="services bg-primary">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2>My profile</h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-md-7 col-sm-3">
+                    <!--<div class="col-md-7 col-sm-3">
                         <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -92,14 +87,53 @@
                             <p>Your contacts</p>
                             <a href="#" class="btn btn-light">Learn More</a>
                         </div>
+                    </div>-->
+                    <div class="text-left" align="left">
+                        <form action="action_page.php">
+                            <h3>What day?</h3>
+                            <input type="checkbox" name="monday" value="1" checked="true">    Monday
+                            <br>
+                            <input type="checkbox" name="tuesday" value="2" checked="true">    Tuesday
+                            <br>
+                            <input type="checkbox" name="wednesday" value="3" checked="true">     Wednesday
+                            <br>
+                            <input type="checkbox" name="thursday" value="4" checked="true">    Thursday
+                            <br>
+                            <input type="checkbox" name="friday" value="5" checked="true">     Friday
+                            <br>
+                            <input type="checkbox" name="saturday" value="6" checked="true">    Saturday
+                            <br>
+                            <input type="checkbox" name="sunday" value="7" checked="true">    Sunday
+                            <br><br>
+                            <input type="submit">
+                        </form>
                     </div>
-                </div>
+                    <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+                    <form action="action_page.php">
+                        Start date:
+                        <input type="date" name="bday">
+                        <input type="submit">
+                    </form>
+
                 <!-- /.row (nested) -->
-            </div>
             <!-- /.col-lg-10 -->
         </div>
-        <!-- /.row -->
+
+    <div class="col-md-3 col-sm-6">
+        <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+            <h4>
+                <strong>Contacts</strong>
+            </h4>
+            <p>Your contacts</p>
+            <a href="#" class="btn btn-light">Learn More</a>
+        </div>
     </div>
+        <!-- /.row -->
     <!-- /.container -->
 </section>
 
@@ -153,6 +187,12 @@
     function loginClick(){
         handleAuthClick();
         login();
+    }
+</script>
+
+<script>
+    function chooseDate(){
+        $('#date').combodate();
     }
 </script>
 

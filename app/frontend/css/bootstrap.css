@@ -2545,6 +2545,7 @@ input[type="checkbox"]:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  margin-right: 5px;
 }
 output {
   display: block;
@@ -2683,7 +2684,7 @@ input[type="search"] {
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"].disabled,
-input[type="checkbox"].disabled,
+input[type="checkbox"].enabled,
 fieldset[disabled] input[type="radio"],
 fieldset[disabled] input[type="checkbox"] {
   cursor: not-allowed;
