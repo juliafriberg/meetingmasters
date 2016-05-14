@@ -28,7 +28,9 @@ function handleAuthClick(login){
         done);
     function done(authResult){
         handleAuthResult(authResult);
-        login();
+        if(validToken()){
+            login();
+        }
     }
 }
 
