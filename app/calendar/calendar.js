@@ -13,7 +13,8 @@ function emptySchedule(startTime, stopTime){
 
 }
 
-function upcomingEvents(weeks){
+function upcomingEvents(){
+    var intervals = [];
     var calendars = gapi.client.calendar.calendarList.list();
     var calendarList = calendars.items;
 
@@ -25,20 +26,19 @@ function upcomingEvents(weeks){
         'maxResults': 1000,
         'orderBy': 'startTime'
     });
-    window.alert(toString(request));
 
     request.execute(function(resp){
         var events = resp.items;
-        appendPre('UpcomingEvents:');
 
         if(events.length > 0){
             for(var i = 0; i < events.length; i++){
                 var event = events[i];
                 var when = event.start.dateTime;
+                var to = event.end.dateTime;
                 if(!when){
                     when = event.start.date;
                 }
-                appendPre(event.summary + ' (' + when + ')');
+                intervals.append((when,to));
             }
         }else {
             appendPre('No upcoming events found');
