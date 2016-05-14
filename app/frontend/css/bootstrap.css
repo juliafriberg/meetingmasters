@@ -45,6 +45,8 @@ template {
 a {
   background-color: transparent;
 }
+
+
 a:active,
 a:hover {
   outline: 0;
@@ -2761,6 +2763,7 @@ select.input-lg {
   height: 46px;
   line-height: 46px;
 }
+
 textarea.input-lg,
 select[multiple].input-lg {
   height: auto;
