@@ -21,14 +21,24 @@ function handleAuthResult(authResult) {
     token = authResult;
 }
 
-function handleAuthClick(){
+function handleAuthClick(login){
+
     gapi.auth.authorize(
         {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-        handleAuthResult);
-    return false;
+        done);
+    function done(authResult){
+        handleAuthResult(authResult);
+        if(validToken()){
+            login();
+        }
+    }
 }
 
 
 function validToken(){
     return !!(token && !token.error); /** window.alert("login clicked"); */
+}
+
+function printToken(){
+    window.alert(validToken())
 }

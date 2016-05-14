@@ -74,7 +74,7 @@
                                 <strong>Teams</strong>
                             </h4>
                             <p>Your teams</p>
-                            <a href="#" class="btn btn-light">Learn More</a>
+                            <a href="#" class="btn btn-light" onclick = printToken()>Learn More</a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -187,8 +187,11 @@
 
 <script>
     function loginClick(){
-        handleAuthClick();
-        login();
+        if(validToken()){
+            login();
+        }else{
+            handleAuthClick(login);
+        }
     }
 </script>
 
@@ -200,7 +203,6 @@
 
 <script>
     function login() {
-        if(validToken()){
         var e=document.getElementById("login");
         if(!e)return true;
         if(e.style.display=="none"){
@@ -223,8 +225,6 @@
         var name = document.getElementById("name");
         name.innerHTML = "Julia";
         return true;
-
-        }
     }
 </script>
 
