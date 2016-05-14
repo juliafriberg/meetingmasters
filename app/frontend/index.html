@@ -77,7 +77,7 @@
 
 <!-- Services -->
 <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-<section id="search" class="services bg-primary">
+<section id="search" class="services bg-primary" style="height: 100%">
     <div class="row">
         <!--<div class="col-md-7 col-sm-3">
             <div class="service-item">
@@ -105,7 +105,7 @@
                 <a href="#" class="btn btn-light">Learn More</a>
             </div>
         </div>-->
-        <div class="col-md-5 col-sm-3" style="padding-left: 300px" align="left">
+        <div id="days" style="padding-left: 300px" align="left">
             <h3>What day?</h3>
             <input type="checkbox" class="dayCheckboxes" name="monday" id="1" checked="true"> Monday
             <br>
@@ -123,7 +123,7 @@
             <br><br>
 
         </div>
-        <div class="container" align="center">
+        <div id="timeSlot">
             <h3>Between what times?</h3>
             <input id="startTime" style="color: black;" type="time" name="startTime" class="time-mm-hh input-lg"
                    step="900"/> -
@@ -140,7 +140,7 @@
             </select>
         </div>
 
-        <div class="container" align="right">
+        <div id="contacts">
             <h3>With who?</h3>
             <div class="row" align="right">
                 <input style="color: black" type="text" name="addPerson" class="text input-lg"/>
@@ -149,11 +149,15 @@
                 </button>
             </div>
         </div>
+        <div id="addedPersons">
+            <p>Julia</p>
+        </div>
+
     </div>
 
-    <div class="center">
+    <div align="center">
         <button onclick="searchForTime()" style="background-color:transparent; border-color:transparent;">
-            <img src="img/button_2.png" height="60"/>
+            <img src="img/button_2.png" height="80"/>
         </button>
     </div>
 </section>
@@ -222,6 +226,14 @@
 </script>
 
 <script>
+
+    function addPerson() {
+
+    }
+</script>
+
+
+<script>
     function chooseDate() {
         $('#date').combodate();
     }
@@ -275,8 +287,6 @@
         else {
             e.style.display = "none"
         }
-
-
     }
 </script>
 

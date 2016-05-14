@@ -28,6 +28,28 @@ body {
 
 }
 
+#days {
+    display: inline-table;
+    margin: 20px;
+}
+
+#contacts {
+    display: inline-table;
+    margin: 20px;
+
+}
+
+#timeSlot {
+    display: inline-table;
+    margin: 20px;
+
+}
+#addedPersons {
+    display: inline-table;
+    margin: 20px;
+
+}
+
 .text-vertical-center h1 {
     margin: 0;
     padding: 0;
