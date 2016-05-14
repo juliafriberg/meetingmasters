@@ -2,7 +2,6 @@
  * Created by joakim on 2016-05-14.
  */
 function loadCalendarApi(){
-    window.alert("Api loaded");
     gapi.client.load('calendar', 'v3');
 }
 
@@ -11,6 +10,9 @@ function emptySchedule(startTime, stopTime, weeks){
 }
 
 function upcomingEvents(weeks){
+    var calendars = gapi.client.calendar.calendarList.list();
+    var calendarList = calendars.items;
+    
     var request = gapi.client.calendar.events.list({
         'calendarId': 'primary',
         'timeMin': (new Date()).toISOString(),
