@@ -13,7 +13,8 @@ function emptySchedule(startTime, stopTime){
 
 }
 
-function upcomingEvents(){
+function upcomingEvents(days){
+
     var intervals = [];
     var calendars = gapi.client.calendar.calendarList.list();
     var calendarList = calendars.items;
@@ -33,18 +34,28 @@ function upcomingEvents(){
         if(events.length > 0){
             for(var i = 0; i < events.length; i++){
                 var event = events[i];
-                var when = event.start.dateTime;
-                var to = event.end.dateTime;
-                if(!when){
-                    when = event.start.date;
+                if (days.contains(event.getDay())){
+                    var when = event.start.dateTime;
+                    var to = event.end.dateTime;
+                    for(var j = 0; j <intervals.length; j++){
+                       if(intervals[j][0] > when && intervals[j][0] < to && intervals[j][1] < to){
+                           intervals[j] = [when,to];
+                       }else if(intervals[j][0] > when && intervals[j][0] < to){
+                           intervals[j][0] = when;
+                       }else if(intervals[j][0] < when && intervals[j][1] < to){
+                           intervals[j][1] = to;
+                       }else{
+                           intervals.append([when,to]);
+                       }
+
+                    }
+                    intervals.append(when,to, event.start.date)
                 }
-                intervals.append((when,to));
             }
-        }else {
-            appendPre('No upcoming events found');
         }
     });
 }
+
 
 function appendPre(message) {
     var pre = document.getElementById('output');
