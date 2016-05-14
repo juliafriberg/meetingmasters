@@ -125,31 +125,27 @@
         </div>
         <div class="container">
             <h3>Between what times?</h3>
-            <input style="color: black;" type="time" name="myTime" class="time-mm-hh input-lg"  step="900"/>
-            <p>-</p>
-            <input style="color: black" type="time" name="myTime2" class="time-mm-hh input-lg" step="900"/>
+            <input style="color: black;" type="time" name="startTime" class="time-mm-hh input-lg"  step="900"/> -
+            <input style="color: black" type="time" name="endTime" class="time-mm-hh input-lg" step="900"/>
 
             <script type="text/javascript">
                 $("input[name='myTime']").timeInput(); // use default or html5 attributes
                 $("input[name='myTime2']").timeInput({step: 900}); // 15 min intervals from 6:00 am to 3:00 pm
             </script>
+
+            <h3>For how long?</h3>
+            <input style="color: black" type="number" class="input-lg" name="time" max="60" min="0">
+            <select name="unit" class="select-lg">
+                <option value="h">h</option>
+                <option value="min">min</option>
+            </select>
+
         </div>
 
-
-
-        <!--<form action="action_page.php">
-            Start date:
-            <input type="date" name="bday">
-            <input type="submit">
-        </form>-->
-        <!-- /.row (nested) -->
-        <!-- /.col-lg-10 -->
-        <div class="container">
-            <div class="service-item">
+        <div class="center">
                 <button type="submit" style="background-color:transparent; border-color:transparent;">
                     <img src="img/button_2.png" height="60"/>
                 </button>
-            </div>
         </div>
     </div>
 
