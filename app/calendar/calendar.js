@@ -2,16 +2,22 @@
  * Created by joakim on 2016-05-14.
  */
 function loadCalendarApi(){
-    gapi.client.load('calendar', 'v3', listUpcomingEvents);
+    gapi.client.load('calendar', 'v3');
 }
 
-function listUpcomingEvents(){
+function emptySchedule(startTime, stopTime, weeks){
+
+}
+
+function upcomingEvents(weeks){
+
+
     var request = gapi.client.calendar.events.list({
         'calendarId': 'primary',
         'timeMin': (new Date()).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
-        'maxResults': 10,
+        'maxResults': 14,
         'orderBy': 'startTime'
     });
 
@@ -38,4 +44,8 @@ function appendPre(message) {
     var pre = document.getElementById('output');
     var textContent = document.createTextNode(message + '\n');
     pre.appendChild(textContent);
+}
+
+function getTimeSlots(startTime, stopTime, weekends, weeks){
+    timeSlots = genEmptyCalendar()
 }
