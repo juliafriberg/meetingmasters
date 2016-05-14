@@ -24,6 +24,7 @@ body {
     vertical-align: middle;
 }
 
+
 .text-vertical-center h1 {
     margin: 0;
     padding: 0;
@@ -167,6 +168,7 @@ hr.small {
 /* About */
 
 .about {
+    padding: 10px;
     display: table;
     position: relative;
     width: 100%;
