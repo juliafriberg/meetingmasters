@@ -1438,6 +1438,11 @@ ol ol {
   padding-right: 5px;
   padding-left: 5px;
 }
+
+.noScroll {
+  overflow: hidden;
+  position:fixed;
+}
 dl {
   margin-top: 0;
   margin-bottom: 20px;
