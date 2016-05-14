@@ -35,26 +35,6 @@
 
 <body>
 
-<!-- Navigation -->
-<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle" style="display: none;"><i class="fa fa-bars"></i></a>
-<section id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-        <li class="sidebar-brand">
-            <a id ="name" href="#top"  onclick = $("#menu-close").click(); >Your name</a>
-        </li>
-        <li>
-            <a href="#top" onclick = $("#menu-close").click(); >Teams</a>
-        </li>
-        <li>
-            <a href="#about" onclick = $("#menu-close").click(); >Contacts</a>
-        </li>
-        <li>
-            <a href="#services" onclick = $("#menu-close").click(); >Find a time!</a>
-        </li>
-    </ul>
-</section>
-
 <section id="login" class="header">
     <div class="text-vertical-center">
         <h1>Meeting Master</h1>
@@ -70,6 +50,11 @@
                 <h1>Meeting Master</h1>
                 <h3>An easy way to find a time that fits all</h3>
                 <br>
+            </div>
+            <div id="profile" class="text-right">
+                <a href="#profile">Name</a> <br>
+                <a href="#teams">Teams</a> <br>
+                <a href="#contacts">Contacts</a> <br>
             </div>
 </section>
 
@@ -118,59 +103,6 @@
     <!-- /.container -->
 </section>
 
-<!-- Callout -->
-<aside class="callout">
-    <div class="text-vertical-center">
-        <h1>Vertically Centered Text</h1>
-    </div>
-</aside>
-
-
-
-<!-- Call to Action -->
-<aside class="call-to-action bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3>The buttons below are impossible to resist.</h3>
-                <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
-            </div>
-        </div>
-    </div>
-</aside>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h4><strong>Start Bootstrap</strong>
-                </h4>
-                <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
-                    </li>
-                </ul>
-                <br>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                    </li>
-                </ul>
-                <hr class="small">
-                <p class="text-muted">Copyright &copy; Your Website 2014</p>
-            </div>
-        </div>
-    </div>
-</footer>
 
 <script src="../calendar/login.js"></script>
 <script src="../calendar/calendar.js"></script>
@@ -184,9 +116,6 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
-<script src="app.js"></script>
-<script src="js/login.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script>
