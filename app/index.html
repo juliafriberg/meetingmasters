@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>Meeting Master</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,9 +29,8 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="app.js"></script>
-    <![endif]-->
 
+    <![endif]-->
 </head>
 
 <body>
@@ -60,12 +59,12 @@
 </nav>
 
 <section id="login" class="header">
-    <div ng-app="myApp" ng-controller="loginCtrl" class="text-vertical-center">
+    <div class="text-vertical-center">
         <h1>Meeting Master</h1>
         <h3>An easy way to find a time that fits all</h3>
         <br>
-        <a ng-click="login" class="btn btn-dark btn-lg">Login</a>
-        <p>{{loggedin}}</p>
+        <a class="btn btn-dark btn-lg" onclick="login()">Login</a>
+        <p id="loggedin">not logged in</p>
     </div>
 </section>
 
@@ -214,6 +213,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+<script src="app.js"></script>
+<script src="js/login.js"></script>
+
 <!-- Custom Theme JavaScript -->
 <script>
     // Closes the sidebar menu
@@ -244,6 +246,21 @@
             }
         });
     });
+</script>
+
+<script>
+    function login() {
+        var e=document.getElementById("login");
+        if(!e)return true;
+        if(e.style.display=="none"){
+            e.style.display="block"
+        }
+        else{
+            e.style.display="none"
+        }
+        return true;
+
+    }
 </script>
 
 </body>
