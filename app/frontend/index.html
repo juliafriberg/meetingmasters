@@ -122,8 +122,6 @@
                 <input type="checkbox" class="dayCheckboxes" name="sunday" id="7" checked="true"> Sunday
                 <br><br>
 
-            <p id="temp">jjj</p>
-
         </div>
         <div class="container">
             <h3>Between what times?</h3>
@@ -156,6 +154,13 @@
 
     <!-- /.row -->
     <!-- /.container -->
+</section>
+
+
+<section id="showResult" class="about">
+    
+    <h3>Result!</h3>
+
 </section>
 
 
@@ -260,8 +265,19 @@
             time = time * 60;
         }
 
-        temp.innerHTML = time;
-        
+        var e=document.getElementById("search");
+        if(!e)return true;
+        if(e.style.display=="none"){
+            e.style.display="block"
+        }
+        else{
+            e.style.display="none"
+        }
+
+
+
+
+
 
 
     }
