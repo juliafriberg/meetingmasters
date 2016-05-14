@@ -78,7 +78,7 @@
 <!-- Services -->
 <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
 <section id="search" class="services bg-primary">
-    <div class="text-vertical-center">
+    <div class="row">
         <!--<div class="col-md-7 col-sm-3">
             <div class="service-item">
                     <span class="fa-stack fa-4x">
@@ -123,10 +123,10 @@
                 <br><br>
 
         </div>
-        <div class="container">
+        <div class="container" align="center">
             <h3>Between what times?</h3>
             <input style="color: black;" type="time" name="myTime" class="time-mm-hh input-lg"  step="900"/>
-            <p>-</p>
+            -
             <input style="color: black" type="time" name="myTime2" class="time-mm-hh input-lg" step="900"/>
 
             <script type="text/javascript">
@@ -135,6 +135,15 @@
             </script>
         </div>
 
+        <div class="container" align="right">
+            <h3>With who?</h3>
+            <div class="row" align="right">
+                <input style="color: black" type="text" name="addPerson" class="text input-lg"/>
+                <button type="submit" style="background-color:transparent; border-color:transparent;">
+                    <img src="img/plus.png" height="40"/>
+                </button>
+            </div>
+        </div>
 
 
         <!--<form action="action_page.php">
@@ -144,15 +153,15 @@
         </form>-->
         <!-- /.row (nested) -->
         <!-- /.col-lg-10 -->
-        <div class="container">
-            <div class="service-item">
-                <button type="submit" style="background-color:transparent; border-color:transparent;">
-                    <img src="img/button_2.png" height="60"/>
-                </button>
-            </div>
+
+    </div>
+    <div class="container" align="center">
+        <div class="service-item">
+            <button type="submit" style="background-color:transparent; border-color:transparent;">
+                <img src="img/button_2.png" height="60"/>
+            </button>
         </div>
     </div>
-
 
     <!-- /.row -->
     <!-- /.container -->
