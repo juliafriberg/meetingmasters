@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
 
     <meta charset="utf-8">
@@ -26,6 +29,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="app.js"></script>
     <![endif]-->
 
 </head>
@@ -55,18 +59,13 @@
     </ul>
 </nav>
 
-<!-- Header -->
-<header>
-
-</header>
-
-
 <section id="login" class="header">
-    <div class="text-vertical-center">
+    <div ng-app="myApp" ng-controller="loginCtrl" class="text-vertical-center">
         <h1>Meeting Master</h1>
         <h3>An easy way to find a time that fits all</h3>
         <br>
-        <a href="#about" class="btn btn-dark btn-lg">Login</a>
+        <a ng-click="login" class="btn btn-dark btn-lg">Login</a>
+        <p>{{loggedin}}</p>
     </div>
 </section>
 
