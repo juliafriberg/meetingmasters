@@ -107,26 +107,28 @@
         </div>-->
         <div class="col-md-5 col-sm-3" style="padding-left: 300px" align="left">
                 <h3>What day?</h3>
-                <input type="checkbox" name="monday" id="1" checked="true"> Monday
+                <input type="checkbox" class="dayCheckboxes" name="monday" id="1" checked="true"> Monday
                 <br>
-                <input type="checkbox" name="tuesday" id="2" checked="true" > Tuesday
+                <input type="checkbox" class="dayCheckboxes" name="tuesday" id="2" checked="true" > Tuesday
                 <br>
-                <input type="checkbox" name="wednesday" id="3" checked="true" > Wednesday
+                <input type="checkbox" class="dayCheckboxes" name="wednesday" id="3" checked="true" > Wednesday
                 <br>
-                <input type="checkbox" name="thursday" id="4" checked="true"> Thursday
+                <input type="checkbox" class="dayCheckboxes" name="thursday" id="4" checked="true"> Thursday
                 <br>
-                <input type="checkbox" name="friday" id="5" checked="true"> Friday
+                <input type="checkbox" class="dayCheckboxes" name="friday" id="5" checked="true"> Friday
                 <br>
-                <input type="checkbox" name="saturday" id="6" checked="true"> Saturday
+                <input type="checkbox" class="dayCheckboxes" name="saturday" id="6" checked="true"> Saturday
                 <br>
-                <input type="checkbox" name="sunday" id="7" checked="true"> Sunday
+                <input type="checkbox" class="dayCheckboxes" name="sunday" id="7" checked="true"> Sunday
                 <br><br>
+
+            <p id="temp">jjj</p>
 
         </div>
         <div class="container">
             <h3>Between what times?</h3>
-            <input style="color: black;" type="time" name="startTime" class="time-mm-hh input-lg"  step="900"/> -
-            <input style="color: black" type="time" name="endTime" class="time-mm-hh input-lg" step="900"/>
+            <input id="startTime" style="color: black;" type="time" name="startTime" class="time-mm-hh input-lg"  step="900"/> -
+            <input id="endTime" style="color: black" type="time" name="endTime" class="time-mm-hh input-lg" step="900"/>
 
             <script type="text/javascript">
                 $("input[name='myTime']").timeInput(); // use default or html5 attributes
@@ -134,8 +136,8 @@
             </script>
 
             <h3>For how long?</h3>
-            <input style="color: black" type="number" class="input-lg" name="time" max="60" min="0">
-            <select name="unit" class="select-lg">
+            <input id="time" style="color: black" type="number" class="input-lg" name="time" max="60" min="0">
+            <select id="unit" name="unit" class="select-lg">
                 <option value="h">h</option>
                 <option value="min">min</option>
             </select>
@@ -143,11 +145,13 @@
         </div>
 
         <div class="center">
-                <button type="submit" style="background-color:transparent; border-color:transparent;">
+                <button onclick="searchForTime()" style="background-color:transparent; border-color:transparent;">
                     <img src="img/button_2.png" height="60"/>
                 </button>
         </div>
     </div>
+
+
 
 
     <!-- /.row -->
@@ -231,6 +235,35 @@
         var name = document.getElementById("username");
         name.innerHTML = "Julia";
         return true;
+    }
+</script>
+
+<script>
+    function searchForTime() {
+        var days = [];
+        var inputElements = document.getElementsByClassName('dayCheckboxes');
+        for(var i=0; inputElements[i]; ++i){
+            if(inputElements[i].checked){
+                days.push(inputElements[i]);
+            }
+        }
+
+        var temp = document.getElementById("temp");
+
+        var startTime = document.getElementById("startTime").value;
+
+        var endTime = document.getElementById("endTime").value;
+
+        var time = document.getElementById("time").value;
+        var timeUnit = document.getElementById("unit").value;
+        if(timeUnit == "h") {
+            time = time * 60;
+        }
+
+        temp.innerHTML = time;
+        
+
+
     }
 </script>
 
